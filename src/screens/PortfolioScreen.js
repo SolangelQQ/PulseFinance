@@ -79,7 +79,7 @@ const PortfolioScreen = () => {
         
         <View style={styles.assetValueContainer}>
           <Text style={styles.assetPrice}>
-            ${asset.value.toLocaleString('en-US', {
+            ${asset.value.toLocaleString('es-ES', {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2
             })}
@@ -87,7 +87,7 @@ const PortfolioScreen = () => {
           <Text
             style={[
               styles.assetChange,
-              {color: asset.change >= 0 ? '#bdc9c2ff' : '#F59E0B'},
+              {color: asset.change >= 0 ? '#e5e9e7ff' : '#F59E0B'},
             ]}>
             {asset.change >= 0 ? '+' : ''}{asset.change.toFixed(1)}%
           </Text>

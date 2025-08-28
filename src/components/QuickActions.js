@@ -33,7 +33,7 @@ const QuickActions = () => {
       style={styles.actionButton} 
       activeOpacity={0.7}>
       <View style={styles.actionContainer}>
-        <Icon name={action.icon} size={24} color="#FFFFFF" />
+        <Icon name={action.icon} size={24} color="#d2ccccec" />
       </View>
       <Text style={styles.actionText}>{action.title}</Text>
     </TouchableOpacity>
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   },
   actionText: {
     fontSize: width * 0.034,
-    color: '#FFFFFF',
+    color: '#ffffffcd',
     fontWeight: '600',
     textAlign: 'center',
   },

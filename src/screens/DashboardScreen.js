@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, SafeAreaView, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import LinearGradient from 'react-native-linear-gradient';
 import BalanceCard from '../components/BalanceCard';
 import QuickActions from '../components/QuickActions';
@@ -73,7 +74,7 @@ const DashboardScreen = () => {
 
           <BalanceCard balance={15847.32} />
           <QuickActions />
-          <ChartCard data={chartData} title="Resumen mensual - Porcentaje de ganancias" />
+          <ChartCard data={chartData} title="Resumen mensual - Porcentaje de ingresos" />
           <TransactionList transactions={mockTransactions} />
         </ScrollView>
       </SafeAreaView>
