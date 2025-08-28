@@ -24,7 +24,7 @@ const DashboardScreen = () => {
     {
       id: 1,
       title: 'Compra Laptop',
-      date: 'Hoy, 2:30 PM',
+      date: 'Hoy, 2:30 p.m.',
       amount: -1299.00,
       type: 'expense',
       icon: 'laptop',
@@ -32,7 +32,7 @@ const DashboardScreen = () => {
     {
       id: 2,
       title: 'Depósito Salario',
-      date: 'Ayer, 9:00 AM',
+      date: 'Ayer, 9:00 a.m.',
       amount: 3500.00,
       type: 'income',
       icon: 'dollar-sign',
@@ -40,7 +40,7 @@ const DashboardScreen = () => {
     {
       id: 3,
       title: 'Cafetería',
-      date: 'Ago 25, 11:45 AM',
+      date: 'Ago 25, 11:45 a.m.',
       amount: -12.50,
       type: 'expense',
       icon: 'coffee',
@@ -73,7 +73,7 @@ const DashboardScreen = () => {
 
           <BalanceCard balance={15847.32} />
           <QuickActions />
-          <ChartCard data={chartData} title="Resumen mensual" />
+          <ChartCard data={chartData} title="Resumen mensual - Porcentaje de ganancias" />
           <TransactionList transactions={mockTransactions} />
         </ScrollView>
       </SafeAreaView>

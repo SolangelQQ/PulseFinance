@@ -6,15 +6,17 @@ const {width, height} = Dimensions.get('window');
 
 const ChartCard = ({data, title}) => {
   const maxValue = Math.max(...data.map(item => item.value));
+  const totalValue = data.reduce((sum, item) => sum + item.value, 0);
 
   const Bar = ({value, month}) => {
     const barHeight = (value / maxValue) * (height * 0.12);
-
+    const percentage = ((value / totalValue) * 100).toFixed(1);
+    
     return (
       <View style={styles.barContainer}>
         <View style={[styles.barBackground, {height: height * 0.12}]}>
           <LinearGradient
-            colors={['#FFD700', '#dba035ff', '#FF8C00']} 
+            colors={['#FFD700', '#dba035ff', '#FF8C00']}
             start={{x: 0.5, y: 0}}
             end={{x: 0.5, y: 1}}
             style={[
@@ -24,6 +26,7 @@ const ChartCard = ({data, title}) => {
           />
         </View>
         <Text style={styles.monthLabel}>{month}</Text>
+        <Text style={styles.percentageLabel}>{percentage}%</Text>
       </View>
     );
   };
@@ -97,6 +100,12 @@ const styles = StyleSheet.create({
     fontSize: width * 0.03,
     color: '#f2f2f4ff',
     fontWeight: '500',
+    marginBottom: 4,
+  },
+  percentageLabel: {
+    fontSize: width * 0.025,
+    color: '#FFD700',
+    fontWeight: '600',
   },
 });
 

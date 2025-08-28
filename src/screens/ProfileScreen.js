@@ -1,7 +1,6 @@
-import { View, Text, StyleSheet, ScrollView, SafeAreaView, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, TouchableOpacity, Dimensions, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Feather';
-
 
 const ProfileScreen = () => {
   const menuItems = [
@@ -50,12 +49,10 @@ const ProfileScreen = () => {
         <View style={[styles.menuIcon, {backgroundColor: item.color + '20'}]}>
           <Icon name={item.icon} size={18} color={item.color} />
         </View>
-        
         <View style={styles.menuContent}>
           <Text style={styles.menuTitle}>{item.title}</Text>
           <Text style={styles.menuSubtitle}>{item.subtitle}</Text>
         </View>
-        
         <Icon name="chevron-right" size={18} color="#b8b9c0ff" />
       </LinearGradient>
     </TouchableOpacity>
@@ -81,15 +78,24 @@ const ProfileScreen = () => {
               colors={['rgba(35, 117, 58, 0.98)', 'rgba(3, 17, 2, 0.96)']}
               style={styles.profileGradient}>
               <LinearGradient
-                colors={['rgba(255, 255, 255, 0.1)', 'rgba(255, 255, 255, 0.05)']}
+                colors={['rgba(35, 117, 58, 0.98)', 'rgba(3, 17, 2, 0.96)']}
                 style={styles.profileGlass}>
-                <View style={styles.avatarContainer}>
+                
+                <View style={styles.profileMainContent}>
+                  <View style={styles.avatarContainer}>
+                    <Image
+                      source={{uri: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80'}}
+                      style={styles.avatarImage}
+                    />
+                    <View style={styles.avatarBorder} />
+                  </View>
                   
+                  <View style={styles.userInfoContainer}>
+                    <Text style={styles.userName}>Solangel Quiroga</Text>
+                    <Text style={styles.userEmail}>solangel@gmail.com</Text>
+                  </View>
                 </View>
-                
-                <Text style={styles.userName}>Solangel Quiroga</Text>
-                <Text style={styles.userEmail}>solangel@gmail.com</Text>
-                
+
                 <View style={styles.statsRow}>
                   <View style={styles.stat}>
                     <Text style={styles.statValue}>5</Text>
@@ -106,6 +112,7 @@ const ProfileScreen = () => {
                     <Text style={styles.statLabel}>Calificación</Text>
                   </View>
                 </View>
+                
               </LinearGradient>
             </LinearGradient>
           </View>
@@ -176,71 +183,79 @@ const styles = StyleSheet.create({
   },
   profileGradient: {
     borderRadius: 20,
-    
   },
   profileGlass: {
     borderRadius: 18,
-    padding: 0,
-    borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.1)',
+    padding: 5,
+  },
+  profileMainContent: {
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent:'center',
-    
+    marginBottom: 20,
   },
   avatarContainer: {
-    margin: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 2,
+    position: 'relative',
+    marginRight: 16,
   },
-  avatarText: {
-    fontSize: 28,
-    color: '#ffffff',
-    fontWeight: '700',
-    
+  avatarImage: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+  },
+  avatarBorder: {
+    position: 'absolute',
+    top: -2,
+    left: -2,
+    right: -2,
+    bottom: -2,
+    borderRadius: 37,
+    borderWidth: 2,
+    borderColor: '#e0b310ff',
+  },
+  userInfoContainer: {
+    flex: 1,
+    justifyContent: 'center',
   },
   userName: {
     fontSize: 22,
     color: '#ffffff',
     fontWeight: '700',
-    marginBottom: 2,
+    marginBottom: 4,
     letterSpacing: -0.5,
-    textAlign: 'center',
   },
   userEmail: {
     fontSize: 16,
     color: '#b8b9c0ff',
-    marginBottom: 15,
-    textAlign: 'center',
   },
   statsRow: {
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
     justifyContent: 'space-between',
-    paddingHorizontal: 10,
+    paddingTop: 10,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(255, 255, 255, 0.1)',
   },
   stat: {
     alignItems: 'center',
     flex: 1,
-    padding: 2,
+    paddingVertical: 12,
   },
   statValue: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#ffffff',
     fontWeight: '700',
-    paddingBottom: 4,
+    marginBottom: 4,
   },
   statLabel: {
     fontSize: 12,
     color: '#d9e8ddff',
     textAlign: 'center',
-    paddingBottom: 18,
   },
   statDivider: {
     width: 1,
     height: 30,
-    backgroundColor: 'rgba(17, 15, 15, 0.1)',
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
   },
   menuSection: {
     paddingHorizontal: 8,
@@ -252,11 +267,10 @@ const styles = StyleSheet.create({
   menuGradient: {
     flexDirection: 'row',
     alignItems: 'center',
-    
     paddingHorizontal: 12,
     borderRadius: 16,
     borderColor: 'rgba(255, 255, 255, 0.1)',
-    minHeight: 120,
+    minHeight: 80,
   },
   menuIcon: {
     width: 40,
@@ -285,22 +299,19 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     backgroundColor:'rgba(233, 17, 17, 1)',
     borderRadius: 16,
-   
   },
   logoutGradient: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    
     borderRadius: 16,
     borderWidth: 1,
     borderColor: 'rgba(206, 12, 12, 0.83)',
   },
   logoutText: {
     fontSize: 14,
-    color: 'rgba(253, 253, 253, 0.83)',
+    color: 'rgba(255, 255, 255, 1)',
     fontWeight: '600',
-   
     padding: 12,
   },
   floatingButton: {
@@ -310,7 +321,7 @@ const styles = StyleSheet.create({
     width: 56,
     height: 56,
     borderRadius: 28,
-    shadowColor: '#000', 
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 4,

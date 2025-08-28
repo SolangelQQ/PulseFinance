@@ -8,22 +8,22 @@ const QuickActions = () => {
   const actions = [
     {
       id: 1,
-      title: 'Enviar',
+      title: 'Enviar monto',
       icon: 'arrow-up',
     },
     {
       id: 2,
-      title: 'Recibir',
+      title: 'Recibir monto',
       icon: 'arrow-down',
     },
     {
       id: 3,
-      title: 'Cambiar',
+      title: 'Cambiar cuenta',
       icon: 'repeat',
     },
     {
       id: 4,
-      title: 'Más',
+      title: 'Más acciones',
       icon: 'grid',
     },
   ];

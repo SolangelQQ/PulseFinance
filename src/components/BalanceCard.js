@@ -11,7 +11,7 @@ const BalanceCard = ({balance, isVisible = true}) => {
   return (
     <View style={styles.container}>
       <LinearGradient
-        colors={['#2c5f46ff', '#051c07ff', '#96deda']}
+        colors={['#2c5f46ff', '#051c07ff', '#088b29ff']}
         start={{x: 0, y: 0}}
         end={{x: 1, y: 1}}
         style={styles.card}>
@@ -128,14 +128,14 @@ const styles = StyleSheet.create({
   },
   accountType: {
     fontSize: width * 0.032,
-    color: '#ffffffcc',
-    fontWeight: '400',
+    color: '#d9ebdfff',
+    fontWeight: '500',
     marginBottom: 2,
   },
   accountNumber: {
     fontSize: width * 0.036,
-    color: '#112116ff',
-    fontWeight: '600',
+    color: '#c9d8cdff',
+    fontWeight: '500',
     letterSpacing: 1,
   },
 });
