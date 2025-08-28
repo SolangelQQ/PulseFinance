@@ -1,17 +1,7 @@
-import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  SafeAreaView,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, TouchableOpacity, Dimensions } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Feather';
 
-const {width, height} = Dimensions.get('window');
 
 const ProfileScreen = () => {
   const menuItems = [
@@ -313,7 +303,6 @@ const styles = StyleSheet.create({
    
     padding: 12,
   },
-  // 🔥 NUEVO: Floating Action Button
   floatingButton: {
     position: 'absolute',
     bottom: 30,
@@ -321,8 +310,7 @@ const styles = StyleSheet.create({
     width: 56,
     height: 56,
     borderRadius: 28,
-    elevation: 8, // Sombra en Android
-    shadowColor: '#000', // Sombra en iOS
+    shadowColor: '#000', 
     shadowOffset: {
       width: 0,
       height: 4,
