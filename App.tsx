@@ -4,6 +4,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {StyleSheet, StatusBar} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import DashboardScreen from './src/screens/DashboardScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
+import PortfolioScreen from './src/screens/PortfolioScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -36,6 +38,16 @@ const App = () => {
           component={DashboardScreen}
           options={{tabBarLabel: 'Inicio'}}
         />
+        <Tab.Screen
+          name="Portfolio"
+          component={PortfolioScreen}
+          options={{tabBarLabel: 'Portafolio'}}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{tabBarLabel: 'Perfil'}}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
@@ -58,3 +70,4 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
